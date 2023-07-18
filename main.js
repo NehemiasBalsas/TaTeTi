@@ -23,13 +23,18 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
     function hacerMovimiento() {
-    if (this.textContent === "" && !JuegoTerminado) {
-    this.textContent = JugadorActual;
-    movimientos++;
-    VerificarGanador();
-    JugadorActual = JugadorActual === "X" ? "O" : "X";
+        if (this.textContent === "" && !JuegoTerminado) {
+        const image = document.createElement("img");
+        image.classList.add("imagen-jugador");
+        image.src = JugadorActual === "X" ? "imagenes/x.png" : "imagenes/o.png";
+
+        this.appendChild(image);
+        movimientos++;
+        VerificarGanador();
+        JugadorActual = JugadorActual === "X" ? "O" : "X";
+        }
     }
-}
+
 
     function VerificarGanador() {
     const combosGanadores = [
