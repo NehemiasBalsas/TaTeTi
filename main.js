@@ -29,11 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
       image.src = JugadorActual === "X" ? "imagenes/x.png" : "imagenes/o.png";
 
       this.appendChild(image);
+      this.classList.add(JugadorActual); // Agregar la clase correspondiente (X o O)
       movimientos++;
       VerificarGanador();
       JugadorActual = JugadorActual === "X" ? "O" : "X";
     }
   }
+
 
 function VerificarGanador() {
   const combosGanadores = [
