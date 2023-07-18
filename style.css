@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: rgb(19, 102, 63);
+    background-image: url('imagenes/fondo.jpg');
 }
 .tateti{
     margin-top: 1rem;
