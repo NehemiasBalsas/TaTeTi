@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (this.textContent === "" && !JuegoTerminado) {
       const image = document.createElement("img");
       image.classList.add("imagen-jugador");
-      image.src = JugadorActual === "X" ? "x.png" : "o.png";
+      image.src = JugadorActual === "X" ? "imagenes/x.png" : "imagenes/o.png";
 
       this.appendChild(image);
       movimientos++;
