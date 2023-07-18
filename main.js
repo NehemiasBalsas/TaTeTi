@@ -17,7 +17,7 @@ function iniciarJuego() {
   mensaje.textContent = "";
   for (let i = 0; i < celdas.length; i++) {
     celdas[i].textContent = "";
-    celdas[i].classList.remove("X", "O"); // Remover las clases "X" y "O"
+    celdas[i].classList.remove("X", "O"); 
     celdas[i].removeEventListener("click", hacerMovimiento);
     celdas[i].addEventListener("click", hacerMovimiento);
   }
@@ -69,7 +69,6 @@ function VerificarGanador() {
     }
     
 function getRandomColor() {
-  // Generar un color aleatorio en formato hexadecimal (#RRGGBB)
   const letters = "0123456789ABCDEF";
   let color = "#";
   for (let i = 0; i < 6; i++) {
@@ -79,7 +78,6 @@ function getRandomColor() {
 }
 
 function getRandomVerticalPosition() {
-  // Generar una posición vertical aleatoria entre -100 y -10 (fuera de la pantalla en la parte superior)
   return Math.random() * -90  + "vh";
 }
 
@@ -87,14 +85,14 @@ function crearConfeti() {
   const confeti = document.createElement("div");
   confeti.classList.add("confeti");
   confeti.style.left = Math.random() * window.innerWidth + "px";
-  confeti.style.top = getRandomVerticalPosition(); // Asignar una posición vertical aleatoria
-  confeti.style.animationDuration = Math.random() * 3 + 2 + "s"; // Duración de la animación entre 2 y 5 segundos
-  confeti.style.backgroundColor = getRandomColor(); // Asignar un color aleatorio
+  confeti.style.top = getRandomVerticalPosition();
+  confeti.style.animationDuration = Math.random() * 3 + 2 + "s";
+  confeti.style.backgroundColor = getRandomColor();
   document.body.appendChild(confeti);
 
   setTimeout(() => {
     document.body.removeChild(confeti);
-  }, 3000); // Eliminar el confeti después de 5 segundos (tiempo de animación)
+  }, 3000);
 }
 
   function FinDelJuego(msg) {
