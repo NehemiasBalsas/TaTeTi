@@ -10,31 +10,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   resetBtn.addEventListener("click", iniciarJuego);
 
-  function iniciarJuego() {
-    JugadorActual = "X";
-    JuegoTerminado = false;
-    movimientos = 0;
-    mensaje.textContent = "";
-    for (let i = 0; i < celdas.length; i++) {
-      celdas[i].textContent = "";
-      celdas[i].removeEventListener("click", hacerMovimiento);
-      celdas[i].addEventListener("click", hacerMovimiento);
-    }
+function iniciarJuego() {
+  JugadorActual = "X";
+  JuegoTerminado = false;
+  movimientos = 0;
+  mensaje.textContent = "";
+  for (let i = 0; i < celdas.length; i++) {
+    celdas[i].textContent = "";
+    celdas[i].classList.remove("X", "O"); // Remover las clases "X" y "O"
+    celdas[i].removeEventListener("click", hacerMovimiento);
+    celdas[i].addEventListener("click", hacerMovimiento);
   }
+}
 
-  function hacerMovimiento() {
-    if (this.textContent === "" && !JuegoTerminado) {
-      const image = document.createElement("img");
-      image.classList.add("imagen-jugador");
-      image.src = JugadorActual === "X" ? "imagenes/x.png" : "imagenes/o.png";
+    function hacerMovimiento() {
+      if (!this.querySelector("img") && !JuegoTerminado) {
+        const image = document.createElement("img");
+        image.classList.add("imagen-jugador");
+        image.src = JugadorActual === "X" ? "imagenes/x.png" : "imagenes/o.png";
 
-      this.appendChild(image);
-      this.classList.add(JugadorActual); // Agregar la clase correspondiente (X o O)
-      movimientos++;
-      VerificarGanador();
-      JugadorActual = JugadorActual === "X" ? "O" : "X";
+        this.appendChild(image);
+        this.classList.add(JugadorActual);
+        movimientos++;
+        VerificarGanador();
+        JugadorActual = JugadorActual === "X" ? "O" : "X";
+      }
     }
-  }
+
 
 
 function VerificarGanador() {
