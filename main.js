@@ -68,7 +68,7 @@ function VerificarGanador() {
   }
     }
     
-function getRandomColor() {
+function RandomColor() {
   const letters = "0123456789ABCDEF";
   let color = "#";
   for (let i = 0; i < 6; i++) {
@@ -77,7 +77,7 @@ function getRandomColor() {
   return color;
 }
 
-function getRandomVerticalPosition() {
+function RandomPosicionVertical() {
   return Math.random() * -90  + "vh";
 }
 
@@ -85,9 +85,9 @@ function crearConfeti() {
   const confeti = document.createElement("div");
   confeti.classList.add("confeti");
   confeti.style.left = Math.random() * window.innerWidth + "px";
-  confeti.style.top = getRandomVerticalPosition();
+  confeti.style.top = RandomPosicionVertical();
   confeti.style.animationDuration = Math.random() * 3 + 2 + "s";
-  confeti.style.backgroundColor = getRandomColor();
+  confeti.style.backgroundColor = RandomColor();
   document.body.appendChild(confeti);
 
   setTimeout(() => {

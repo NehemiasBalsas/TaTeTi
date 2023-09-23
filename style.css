@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url('imagenes/fondo.jpg');
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/947/208/1021/abstract-red-blue-digital-art-wallpaper-preview.jpg');
     background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -15,7 +15,10 @@ body{
 }
 .tateti{
     margin-top: 1rem;
-    color: #fff;
+    color: rgb(33, 33, 182);
+    padding: 0.2rem;
+    border-bottom: solid 1.5px rgb(136, 5, 5) ;
+    border-radius: 10px;
 }
 .contenedor{
     display: flex;
@@ -31,24 +34,16 @@ body{
 #tabla1 td {
     width: 7rem;
     height: 7rem;
-    border: 3px inset rgb(125, 1, 86);
+    border: 3px inset rgb(255, 255, 255);
     text-align: center;
     font-size: 3rem;
     cursor: pointer;
 }
 
-#tabla1 .cell.X {
-    color: red;
-}
-
-#tabla1 .cell.O {
-    color: blue;
-}
-
 #mensaje {
     color: #fff;
     position: absolute;
-    top: 2.2rem;
+    top: 2.8rem;
     margin-top: 1rem;
     font-weight: bold;
 }
@@ -56,7 +51,7 @@ body{
 button {
     margin-top: 1.4rem;
     padding: 0.3rem;
-    background-color: rgb(8, 15, 91);
+    background-color: rgb(1, 9, 99);
     border-radius: 10px;
     color: #fff;
 }
@@ -79,18 +74,32 @@ button {
 }
 .confeti {
     position: absolute;
-    width: 12px;
-    height: 10px;
+    width: 9px;
+    height: 7px;
     top: -10px;
     clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-    animation: confeti-fall 3s linear infinite;
+    animation: confeti-fall 2s linear infinite;
 }
 
 .derechos-de-autor {
-    position: fixed;
-        bottom: 15px;
+    margin-top: 1rem;
     font-size: 15px;
     color: #aeaeae;
     padding: 20px;
+}
 
+@media screen and (max-width:650px) {
+
+    #tabla1 td{
+        border: solid 2px rgb(162, 1, 1) ;
+    }
+    
+    .confeti{
+        width: 7px;
+        height: 5px;
+    }
+
+    .derechos-de-autor{
+        margin-top: 4rem;
+    }
 }
